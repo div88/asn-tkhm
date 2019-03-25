@@ -37,6 +37,8 @@ a {
   width: 32%;
   width: 310px;
   height: 250px;
+  margin-right: 4px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 

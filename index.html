@@ -1,22 +1,47 @@
 <!-- Put your final HTML here -->
 <html>
 	<head>
-		<script type="text/javascript">	
-		</script>
 		<link rel="stylesheet" type="text/css" href="./assets/styles/site.css">
+		<!-- <script type="text/javascript" src="./dogs.json"></script> -->
+		<script type="text/javascript">	
+			function addThumbnails() {
+				var tnContainer = document.getElementById("thumbnails");
+				var srcI = "./assets/images/raw/10.jpeg";
+
+				var dogsArr = [
+					'./assets/images/raw/1.jpeg',
+					'./assets/images/raw/2.jpeg',
+					'./assets/images/raw/3.jpeg',
+					'./assets/images/raw/4.jpeg',
+					'./assets/images/raw/5.jpeg',
+					'./assets/images/raw/6.jpeg',
+					'./assets/images/raw/7.jpeg',
+					'./assets/images/raw/8.jpeg',
+					'./assets/images/raw/9.jpeg',
+					'./assets/images/raw/10.jpeg',
+					'./assets/images/raw/11.jpeg',
+
+				];
+
+			
+				for(i=0;i<dogsArr.length-1;i++){
+					var img = document.createElement('img');
+					var altText = 'Dog'+(i+1);
+					img.setAttribute('src',dogsArr[i]);
+					img.setAttribute('alt', altText);
+					tnContainer.append(img);
+				}
+				
+			}
+
+		</script>
 	</head>
-	<body onload="addThumbanils()">
+	<body onload="addThumbnails()">
 		<div class="site-wrapper">
 			<h1 class="site-header">Pet Adoption Agency Gallery</h1>
 
 			<div class="thumbnails-container">
-				<figure>
-				  <img src="./assets/images/raw/1.jpeg" alt="Dog1">
-				  <img src="./assets/images/raw/2.jpeg" alt="Dog2">
-				  <img src="./assets/images/raw/3.jpeg" alt="Dog3">
-				  <img src="./assets/images/raw/4.jpeg" alt="Dog4">
-				  <img src="./assets/images/raw/5.jpeg" alt="Dog5">
-				  <img src="./assets/images/raw/6.jpeg" alt="Dog6">
+				<figure id="thumbnails">
 				</figure>
 			</div>
 
