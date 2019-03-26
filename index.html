@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="./assets/styles/site.css">
-		<!-- <script type="text/javascript" src="./dogs.json"></script> -->
+		<script type="text/javascript" src="./assets/data/dogs.json"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<script type="text/javascript">	
 			function addThumbnails() {
 				var tnContainer = document.getElementById("thumbnails");
@@ -29,10 +32,21 @@
 					var altText = 'Dog'+(i+1);
 					img.setAttribute('src',dogsArr[i]);
 					img.setAttribute('alt', altText);
+					img.setAttribute('data-target', "#imgModal");
+					img.setAttribute('type', "button");
+					img.setAttribute('data-toggle', "modal");
+					img.setAttribute('onclick','openLargeImg(this)');
 					tnContainer.append(img);
 				}
 				
 			}
+
+			function openLargeImg(clickedImage) {
+				var imgSource = clickedImage.src;
+				$('.enlargedImage').attr('src', imgSource); 
+			}
+
+
 
 		</script>
 	</head>
@@ -44,7 +58,25 @@
 				<figure id="thumbnails">
 				</figure>
 			</div>
-
 		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" role="dialog">
+			<div class="modal-dialog">
+
+			  <!-- Modal content-->
+			  <div class="modal-content">
+			    <div class="modal-header">
+			      <button type="button" class="close" data-dismiss="modal">&times;</button>
+			    </div>
+			    <div class="modal-body">
+			      <img src='' class="enlargedImage">
+			    </div>
+			 
+			  </div>
+			  
+			</div>
+		</div>
+
 	</body>
 </html>
