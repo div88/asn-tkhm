@@ -1,4 +1,4 @@
-var dogs = {
+{
   "dogs": [
   {
       "image": "/assets/images/raw/1.jpeg",

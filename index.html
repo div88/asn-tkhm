@@ -18,7 +18,7 @@
             console.log(dogsArr);
         });
 
-      
+      	var fragment = document.createDocumentFragment();
         for(i=0;i<dogsArr.length-1;i++){
           var img = document.createElement('img');
           var dot = '.';
@@ -29,9 +29,11 @@
           img.setAttribute('type', "button");
           img.setAttribute('data-toggle', "modal");
           img.setAttribute('onclick','openLargeImg(this)');
-          tnContainer.append(img);
+          fragment.appendChild(img);
         }
         
+
+        tnContainer.append(fragment);
       }
 
       function openLargeImg(clickedImage) {
